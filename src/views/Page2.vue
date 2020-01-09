@@ -1,7 +1,7 @@
 <template>
   <div class="page2">
-    <UserTable :users="users" :colorFunc="showZeroLogin?colorFunc:null"/>
-    <button @click="this.toggleZeroLogin">toggle</button>
+    <UserTable :users="users" :colorFunc="colorRow?colorFunc:null"/>
+    <button @click="this.toggle" :class="{'green-button':colorRow}">toggle</button>
   </div>
 </template>
 
@@ -15,7 +15,7 @@ export default {
   },
   data(){
     return {
-      showZeroLogin: false
+      colorRow: false
     }
   },
   computed: {
@@ -24,11 +24,11 @@ export default {
     }
   },
   methods: {
-    toggleZeroLogin(){
-      this.showZeroLogin = !this.showZeroLogin
+    toggle(){
+      this.colorRow = !this.colorRow
     },
     colorFunc(user){
-      if(this.showZeroLogin && user.login_count > 1){
+      if(user.login_count > 1){
         return '#4f4'
       }
       return 'white'
@@ -39,6 +39,32 @@ export default {
 
 <style scoped>
 button{
+  padding: 0;
+  border: none;
+  outline: none;
+  color: white;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  width: 6rem;
+  height: 2rem;
   margin: 1rem;
+}
+button{
+  background-color: #66f;
+}
+button:hover{
+  background-color:#44d;
+}
+button:active{
+  background-color:#22a;
+}
+.green-button{
+  background-color: #4b4;
+}
+.green-button:hover{
+  background-color:#292;
+}
+.green-button:active{
+  background-color:#070;
 }
 </style>

@@ -35,5 +35,10 @@ table{
   border-spacing: 0;
   width: 100%;
 }
-
+thead{
+    background-color: #ddd;
+}
+th{
+    border: 1px solid #aaa;
+}
 </style>
