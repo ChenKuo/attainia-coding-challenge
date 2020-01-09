@@ -27,6 +27,8 @@ export default {
     toggle(){
       this.colorRow = !this.colorRow
     },
+    // maps user to row color
+    // this function is passed as prop to table component when using custom row coloring 
     colorFunc(user){
       if(user.login_count > 1){
         return '#4f4'

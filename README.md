@@ -1,7 +1,11 @@
 # attainia-coding-challenge
-
-## Project setup
+description: https://github.com/Attainia/user-activity-code-challenge
+author: Chen Kuo
+date: 1/9/2020
+## Project download and setup
 ```
+git clone https://github.com/ChenKuo/attainia-coding-challenge.git
+cd attainia-coding-challenge
 npm install
 ```
 
@@ -9,21 +13,10 @@ npm install
 ```
 npm run serve
 ```
+App will be served at http://localhost:8080/
 
 ### Compiles and minifies for production
 ```
 npm run build
 ```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Run a http server at /dist directory to serve the app.

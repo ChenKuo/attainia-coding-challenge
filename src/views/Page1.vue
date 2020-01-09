@@ -1,7 +1,7 @@
 <template>
   <div class="page1">
     <UserTable :users="users" :colorFunc="colorRow?colorFunc:null"/>
-    <button @click="this.toggle" :class="{redbutton:colorRow}">toggle</button>
+    <button @click="this.toggle" :class="{'red-button':colorRow}">toggle</button>
   </div>
 </template>
 
@@ -27,6 +27,8 @@ export default {
     toggle(){
       this.colorRow = !this.colorRow
     },
+    // maps user to row color
+    // this function is passed as prop to table component when using custom row coloring 
     colorFunc(user){
       if(user.login_count === 0){
         return '#f44'
@@ -58,13 +60,13 @@ button:hover{
 button:active{
   background-color:#22a;
 }
-.redbutton{
+.red-button{
   background-color: #f66;
 }
-.redbutton:hover{
+.red-button:hover{
   background-color:#d44;
 }
-.redbutton:active{
+.red-button:active{
   background-color:#a22;
 }
 </style>
