@@ -1,12 +1,23 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/page1">Page1</router-link> |
+      <router-link to="/page2">Page2</router-link>
     </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+export default {
+  created(){
+    import('@/assets/users.json')
+    .then(users => {
+      this.$store.state.users = users.default
+    })
+  }
+}
+</script>
 
 <style>
 #app {
